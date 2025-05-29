@@ -4,23 +4,82 @@
     <meta charset="UTF-8">
     <title>Dancun Exclusive's Interior Design</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
-        header, section { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);}
-        h1, h2 { color: #7e3ff2; }
-        .services ul { list-style: none; padding: 0; }
-        .services li { padding: 8px 0; }
-        .portfolio img { max-width: 100%; border-radius: 4px; margin-bottom: 10px; }
-        .testimonials { background: #f1f1f1; padding: 16px; border-radius: 6px; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            min-height: 100vh;
+            background: url('bg-person-computer.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+        /* Overlay to dim background for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255,255,255,0.83);
+            z-index: 0;
+        }
+        header, section {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 24px 28px;
+            background: rgba(255,255,255,0.97);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(75,0,130,0.13), 0 1.5px 6px rgba(0,0,0,0.12);
+            position: relative;
+            z-index: 1;
+        }
+        h1, h2 {
+            color: #7e3ff2;
+            text-shadow: 0 2px 12px #e3d0ff70;
+        }
+        nav { text-align: center; margin: 18px 0; }
+        nav a {
+            margin: 0 16px;
+            color: #7e3ff2;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #ff8c42; }
+        /* Portfolio grid */
+        .portfolio-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 24px;
+        }
+        .portfolio-photos img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 6px 35px rgba(126,63,242,0.21), 0 2px 8px rgba(0,0,0,0.07);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .portfolio-photos img:hover {
+            transform: scale(1.06) rotate(-2deg);
+            box-shadow: 0 12px 56px #7e3ff2cc, 0 4px 18px #ff8c4260;
+        }
+        .testimonials {
+            background: #f7f2ffcc;
+            padding: 16px;
+            border-radius: 10px;
+        }
         .contact { font-size: 1.1em; }
-        nav { text-align: center; margin: 16px 0; }
-        nav a { margin: 0 12px; color: #7e3ff2; text-decoration: none; font-weight: bold;}
-        nav a:hover { text-decoration: underline; }
+        @media (max-width:650px) {
+            header, section { padding: 12px 4vw; }
+            .portfolio-photos { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Transforming Spaces into Stunning Works of Art</h1>
-        <p>Welcome to <strong>DANCUN EXCLUSIVE'S INTERIOR DESIGNING WEBSITE</strong>, where creativity meets comfort. We specialize in crafting beautiful, functional, and personalized interior spaces that reflect your unique style. Whether it’s your home, office, or commercial space — we bring your vision to life with elegance and precision.</p>
+        <p>Welcome to <strong>DANCUN EXCLUSIVE'S INTERIOR DESIGNING WEBSITE</strong>, where creativity meets comfort.<br>
+        We specialize in crafting beautiful, functional, and personalized interior spaces that reflect your unique style.<br>
+        Whether it’s your home, office, or commercial space — we bring your vision to life!</p>
         <p><strong>Let’s create a space you’ll love coming back to!</strong></p>
         <p>✅ <a href="#contact">Book your free consultation today!</a></p>
     </header>
@@ -35,26 +94,34 @@
 
     <section id="about">
         <h2>Meet Your Designer – Passion, Purpose, and Precision</h2>
-        <p>At <strong>Dancun Exclusive</strong>, we believe great design is more than just aesthetics — it’s about creating experiences. With a deep passion for interior design and years of hands-on experience, we work closely with clients to ensure every detail tells a story.</p>
+        <p>At <strong>Dancun Exclusive</strong>, great design is more than just aesthetics — it’s about creating experiences. 
+        We work closely with clients to ensure every detail tells a story.</p>
         <p>Our mission? To make your dream space a reality, one beautiful room at a time.</p>
     </section>
 
-    <section id="services" class="services">
+    <section id="services">
         <h2>Our Interior Design Services</h2>
         <ul>
             <li>🛋️ <strong>Residential Design</strong> – From cozy living rooms to luxury bedrooms</li>
             <li>🏢 <strong>Commercial Spaces</strong> – Offices, restaurants, and retail interiors</li>
             <li>🏗️ <strong>Renovation & Remodeling</strong> – Transform old spaces into modern gems</li>
-            <li>🎨 <strong>Color & Styling Consultation</strong> – Let’s find your perfect palette</li>
-            <li>🖼️ <strong>Furniture & Decor Sourcing</strong> – We help you pick the perfect pieces</li>
+            <li>🎨 <strong>Color & Styling Consultation</strong> – Find your perfect palette</li>
+            <li>🖼️ <strong>Furniture & Decor Sourcing</strong> – Pick the perfect pieces</li>
         </ul>
         <p>✨ Each service comes with personalized design plans and mood boards.</p>
     </section>
 
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio">
         <h2>Our Recent Work</h2>
-        <p>Browse through a collection of our completed projects and see how we’ve helped clients transform their spaces into masterpieces. From minimal modern looks to classic elegance, we’ve done it all.</p>
-        <p>📸 <em>High-resolution photos | Before & After comparisons coming soon!</em></p>
+        <p>Browse some of our latest transformations:</p>
+        <div class="portfolio-photos">
+            <img src="photo1.jpg" alt="Modern Living Room Interior">
+            <img src="photo2.jpg" alt="Elegant Bedroom Design">
+            <img src="photo3.jpg" alt="Office Space Makeover">
+            <img src="photo4.jpg" alt="Luxury Kitchen Interior">
+            <!-- Add more images as you upload them -->
+        </div>
+        <p style="margin-top:18px;">📸 <em>High-resolution photos | Before & After comparisons coming soon!</em></p>
     </section>
 
     <section id="testimonials" class="testimonials">
