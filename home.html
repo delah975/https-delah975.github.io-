@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dancun Exclusives</title>
+  <title>DANCUN INTERIORS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:wght@400;700&display=swap">
   <style>
     body {
       font-family: 'Montserrat', Arial, sans-serif;
-      background: linear-gradient(135deg, #87ceeb 0%, #f0f8ff 100%);
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       margin: 0;
       padding: 0;
       min-height: 100vh;
@@ -20,7 +20,7 @@
       color: #fff;
       padding: 40px 0 30px 0;
       text-align: center;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       animation: slideDown 1.5s cubic-bezier(.77,0,.18,1) 0s 1;
     }
@@ -59,7 +59,7 @@
       width: 100%;
     }
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 40px auto;
       background: rgba(255,255,255,0.97);
       padding: 30px 22px 40px 22px;
@@ -74,11 +74,11 @@
     section {
       margin-bottom: 38px;
     }
-    h2 {
+    h1, h2 {
       color: #0088a9;
       margin-top: 0;
-      font-size: 2em;
-      letter-spacing: 1.2px;
+      font-size: 2.2em;
+      letter-spacing: 1.5px;
       animation: popIn 1s;
     }
     @keyframes popIn {
@@ -120,6 +120,36 @@
       0%, 100% { transform: translateY(0);}
       50% { transform: translateY(-8px);}
     }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(44,62,80,0.13);
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.06) rotate(-2deg);
+      box-shadow: 0 6px 30px rgba(44,62,80,0.21);
+    }
+    .contact-details {
+      background: #e7f3fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 18px 0;
+      font-size: 1.15em;
+      color: #2d3e50;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+      animation: popIn 1s;
+    }
     .cta {
       display: block;
       width: max-content;
@@ -153,16 +183,18 @@
     @media (max-width: 700px) {
       main { padding: 11px 5px 20px 5px; }
       .feature-list { flex-direction: column; }
+      .gallery img { height: 130px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Dancun Exclusives</h1>
-    <p>Your exclusive destination for amazing products and content.</p>
+    <h1>DANCUN INTERIORS</h1>
+    <p>Your exclusive destination for amazing interior designs.</p>
   </header>
   <nav>
     <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
     <a href="#features">Features</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -170,37 +202,54 @@
     <section id="about">
       <h2>About Us</h2>
       <p>
-        Dancun Exclusives is dedicated to bringing you the best products and experiences. 
-        Enjoy a sleek, modern, and interactive web experience!
+        Welcome to <b>DANCUN INTERIORS</b>! We specialize in transforming spaces with creative, modern, and luxurious interior design solutions. Discover our gallery for inspiration and contact us to begin your journey to a beautiful home or office.
       </p>
     </section>
+
+    <section id="gallery">
+      <h2>Interior Design Gallery</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Modern Living Room">
+        <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=600&q=80" alt="Elegant Kitchen">
+        <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Chic Bedroom">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Minimalist Office">
+        <img src="https://images.unsplash.com/photo-1503389152951-9c3d0c6f1621?auto=format&fit=crop&w=600&q=80" alt="Luxury Lounge">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Cozy Sitting Area">
+      </div>
+    </section>
+
     <section id="features">
       <h2>Our Features</h2>
       <div class="feature-list">
-        <div class="feature" onclick="alert('Smooth Animations!')">
-          <i>✨</i>
-          <strong>Smooth Animations</strong>
-          <p>Modern CSS animations and transitions for an engaging look and feel.</p>
+        <div class="feature" onclick="alert('Custom Interior Designs!')">
+          <i>🏡</i>
+          <strong>Custom Interior Designs</strong>
+          <p>Personalized solutions for your unique taste and space.</p>
         </div>
-        <div class="feature" onclick="alert('Responsive Design!')">
-          <i>📱</i>
-          <strong>Responsive Design</strong>
-          <p>Seamless experience on all devices—desktop, tablet, or mobile.</p>
+        <div class="feature" onclick="alert('3D Visualization!')">
+          <i>🖥️</i>
+          <strong>3D Visualization</strong>
+          <p>Preview your space before implementation with our 3D models.</p>
         </div>
-        <div class="feature" onclick="alert('Interactive Elements!')">
-          <i>🖱️</i>
-          <strong>Interactive Elements</strong>
-          <p>Hover and click effects for a fun, interactive user journey.</p>
+        <div class="feature" onclick="alert('Expert Consultation!')">
+          <i>💡</i>
+          <strong>Expert Consultation</strong>
+          <p>Get advice from our experienced designers and architects.</p>
         </div>
-        <div class="feature" onclick="alert('Fast Loading!')">
-          <i>⚡</i>
-          <strong>Fast Loading</strong>
-          <p>Optimized for performance to deliver content instantly.</p>
+        <div class="feature" onclick="alert('Project Management!')">
+          <i>📋</i>
+          <strong>Project Management</strong>
+          <p>We handle all aspects from design to final touches—stress free!</p>
         </div>
       </div>
     </section>
+
     <section id="contact">
-      <h2>Contact Us</h2>
+      <h2>Contact DANCUN INTERIORS</h2>
+      <div class="contact-details">
+        <p><strong>Email:</strong> <a href="mailto:dancunexclusives@gmail.com">dancunexclusives@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+254729089668">0729089668</a></p>
+      </div>
       <form id="contactForm" autocomplete="off" style="max-width:400px;margin:auto;">
         <input type="text" id="name" placeholder="Your Name" required style="width:100%;padding:12px;margin:10px 0;border-radius:7px;border:1px solid #ccc;font-size:1em;">
         <input type="email" id="email" placeholder="Your Email" required style="width:100%;padding:12px;margin:10px 0;border-radius:7px;border:1px solid #ccc;font-size:1em;">
@@ -211,7 +260,7 @@
     </section>
   </main>
   <footer>
-    &copy; 2025 Dancun Exclusives. All rights reserved.
+    &copy; 2025 DANCUN INTERIORS. All rights reserved.
   </footer>
   <script>
     // Simple animated form feedback
