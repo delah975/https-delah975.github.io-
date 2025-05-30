@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dancun Exclusives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #87ceeb 0%, #f0f8ff 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    header {
+      background: #2d3e50;
+      color: #fff;
+      padding: 40px 0 30px 0;
+      text-align: center;
+      letter-spacing: 1.5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: slideDown 1.5s cubic-bezier(.77,0,.18,1) 0s 1;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-80px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+    nav {
+      margin: 20px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #2d3e50;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 700;
+      font-size: 1.05em;
+      transition: color 0.3s;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #2d3e50;
+      transition: width .3s;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+    }
+    nav a:hover {
+      color: #0088a9;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.97);
+      padding: 30px 22px 40px 22px;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px rgba(44,62,80,0.11);
+      animation: fadeIn 2s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(60px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    section {
+      margin-bottom: 38px;
+    }
+    h2 {
+      color: #0088a9;
+      margin-top: 0;
+      font-size: 2em;
+      letter-spacing: 1.2px;
+      animation: popIn 1s;
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8);}
+      to   { opacity: 1; transform: scale(1);}
+    }
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .feature {
+      flex: 1 1 260px;
+      background: #e7f3fa;
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      margin: 10px 0;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      animation: popIn 0.7s;
+    }
+    .feature:hover {
+      transform: translateY(-10px) scale(1.03) rotate(-1deg);
+      box-shadow: 0 6px 20px rgba(44,62,80,0.17);
+      background: linear-gradient(135deg, #f0f8ff 50%, #e0f7fa 100%);
+    }
+    .feature i {
+      font-size: 2em;
+      margin-bottom: 12px;
+      display: block;
+      color: #0088a9;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0);}
+      50% { transform: translateY(-8px);}
+    }
+    .cta {
+      display: block;
+      width: max-content;
+      margin: 30px auto 0 auto;
+      padding: 13px 34px;
+      font-size: 1.1em;
+      color: #fff;
+      background: linear-gradient(90deg, #0088a9 60%, #2d3e50 100%);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 2px 14px rgba(0,136,169,0.08);
+      transition: background 0.3s, transform 0.2s;
+      animation: fadeIn 1s 0.5s backwards;
+    }
+    .cta:hover {
+      background: linear-gradient(90deg, #2d3e50 60%, #0088a9 100%);
+      transform: scale(1.06);
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #2d3e50;
+      color: #cfd8dc;
+      font-size: 1em;
+      letter-spacing: 0.5px;
+      margin-top: 60px;
+      animation: fadeIn 2.5s;
+    }
+    @media (max-width: 700px) {
+      main { padding: 11px 5px 20px 5px; }
+      .feature-list { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dancun Exclusives</h1>
+    <p>Your exclusive destination for amazing products and content.</p>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        Dancun Exclusives is dedicated to bringing you the best products and experiences. 
+        Enjoy a sleek, modern, and interactive web experience!
+      </p>
+    </section>
+    <section id="features">
+      <h2>Our Features</h2>
+      <div class="feature-list">
+        <div class="feature" onclick="alert('Smooth Animations!')">
+          <i>✨</i>
+          <strong>Smooth Animations</strong>
+          <p>Modern CSS animations and transitions for an engaging look and feel.</p>
+        </div>
+        <div class="feature" onclick="alert('Responsive Design!')">
+          <i>📱</i>
+          <strong>Responsive Design</strong>
+          <p>Seamless experience on all devices—desktop, tablet, or mobile.</p>
+        </div>
+        <div class="feature" onclick="alert('Interactive Elements!')">
+          <i>🖱️</i>
+          <strong>Interactive Elements</strong>
+          <p>Hover and click effects for a fun, interactive user journey.</p>
+        </div>
+        <div class="feature" onclick="alert('Fast Loading!')">
+          <i>⚡</i>
+          <strong>Fast Loading</strong>
+          <p>Optimized for performance to deliver content instantly.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="contactForm" autocomplete="off" style="max-width:400px;margin:auto;">
+        <input type="text" id="name" placeholder="Your Name" required style="width:100%;padding:12px;margin:10px 0;border-radius:7px;border:1px solid #ccc;font-size:1em;">
+        <input type="email" id="email" placeholder="Your Email" required style="width:100%;padding:12px;margin:10px 0;border-radius:7px;border:1px solid #ccc;font-size:1em;">
+        <textarea id="message" placeholder="Your Message" required style="width:100%;padding:12px;margin:10px 0;border-radius:7px;border:1px solid #ccc;font-size:1em;min-height:80px;"></textarea>
+        <button type="submit" class="cta">Send Message</button>
+        <div id="formResult" style="margin-top:15px;font-weight:bold;color:#0088a9;"></div>
+      </form>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Dancun Exclusives. All rights reserved.
+  </footer>
+  <script>
+    // Simple animated form feedback
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formResult').textContent = 'Thank you for reaching out!';
+      document.getElementById('formResult').style.color = '#0088a9';
+      this.reset();
+      setTimeout(function(){
+        document.getElementById('formResult').textContent = '';
+      }, 3500);
+    });
+  </script>
+</body>
+</html>
