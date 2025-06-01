@@ -1,318 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Dancun Exclusive Interiors</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts for elegance -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    :root {
-      --main: #181818;
-      --accent: #e3b04b;
-      --bg: #f7f5f1;
-      --fade: #f0e9dd;
-      --shadow: rgba(30,30,30,0.13);
-    }
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--main);
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: linear-gradient(120deg, var(--accent) 0%, #fffbe6 100%);
-      color: var(--main);
-      text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-      box-shadow: 0 4px 16px var(--shadow);
-      animation: slideDown 1.2s cubic-bezier(.77,0,.18,1) both;
-    }
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.4rem;
-      letter-spacing: 2px;
-      animation: fadeIn 1.5s;
-    }
-    header blockquote {
-      font-style: italic;
-      color: var(--main);
-      font-size: 1.17rem;
-      margin-bottom: 1.3rem;
-      animation: fadeIn 2s 0.3s backwards;
-    }
-    header p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-      animation: fadeIn 2s 0.6s backwards;
-    }
-    main {
-      margin-top: 1.5rem;
-    }
-    section {
-      background: white;
-      margin: 2.2rem auto;
-      padding: 2.5rem 1.2rem;
-      max-width: 900px;
-      border-radius: 20px;
-      box-shadow: 0 4px 16px var(--shadow);
-      opacity: 0;
-      transform: translateY(60px);
-      transition: opacity 1s, transform 1s;
-      will-change: opacity, transform;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    section h2 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--accent);
-      margin-bottom: 1.1rem;
-      font-size: 2rem;
-      letter-spacing: 1px;
-      border-left: 6px solid var(--accent);
-      padding-left: 0.8rem;
-      animation: fadeIn 1.5s;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 1.1rem;
-    }
-    ul li:before {
-      content: '•';
-      color: var(--accent);
-      margin-right: 0.7em;
-      font-size: 1.2em;
-    }
-    .gallery {
-      display: flex;
-      gap: 1.3rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-    .gallery img {
-      width: 300px;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px var(--shadow);
-      transition: transform 0.5s cubic-bezier(.77,0,.18,1), box-shadow 0.5s;
-      cursor: pointer;
-      animation: popIn 1.2s both;
-    }
-    .gallery img:hover {
-      transform: scale(1.09) rotate(-2deg);
-      box-shadow: 0 14px 40px var(--accent);
-      filter: brightness(1.07) saturate(1.2);
-    }
-    .contact-form {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1.2rem;
-    }
-    .contact-form label {
-      font-weight: 500;
-      color: var(--main);
-    }
-    .contact-form input, .contact-form textarea {
-      border: none;
-      border-radius: 8px;
-      padding: 0.9em;
-      background: var(--fade);
-      font-size: 1rem;
-      font-family: inherit;
-      box-shadow: 0 2px 8px var(--shadow);
-      transition: box-shadow 0.3s;
-    }
-    .contact-form input:focus, .contact-form textarea:focus {
-      outline: 2px solid var(--accent);
-      box-shadow: 0 4px 16px var(--accent);
-    }
-    .contact-form button {
-      background: var(--accent);
-      color: var(--main);
-      border: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      font-family: 'Montserrat', sans-serif;
-      padding: 0.8em 1.8em;
-      cursor: pointer;
-      font-weight: 700;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 16px var(--shadow);
-      transition: background 0.3s, transform 0.2s;
-    }
-    .contact-form button:hover {
-      background: #b98a39;
-      transform: translateY(-3px) scale(1.03);
-      color: white;
-    }
-    .social-links {
-      text-align: center;
-      margin: 2rem 0;
-      animation: fadeIn 2.2s;
-    }
-    .social-links a {
-      color: var(--main);
-      background: var(--fade);
-      margin: 0 0.7em;
-      padding: 0.7em 1.2em;
-      border-radius: 50px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      box-shadow: 0 2px 8px var(--shadow);
-      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-    }
-    .social-links a:hover {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 4px 16px var(--accent);
-      transform: scale(1.07);
-    }
-    .social-links i {
-      margin-right: 0.5em;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem 1rem 1rem;
-      background: #222;
-      color: #fff;
-      letter-spacing: 1px;
-      font-size: 1.12rem;
-      position: relative;
-      z-index: 3;
-    }
-    /* Key Animations */
-    @keyframes slideDown {
-      0% {transform: translateY(-70px); opacity: 0;}
-      100% {transform: translateY(0); opacity: 1;}
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    @keyframes popIn {
-      0% {transform: scale(0.7) rotate(-8deg); opacity: 0;}
-      100% {transform: scale(1) rotate(0); opacity: 1;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dancun Exclusive's Interior Design</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            min-height: 100vh;
+            background: url('bg-person-computer.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+        /* Overlay to dim background for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255,255,255,0.83);
+            z-index: 0;
+        }
+        header, section {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 24px 28px;
+            background: rgba(255,255,255,0.97);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(75,0,130,0.13), 0 1.5px 6px rgba(0,0,0,0.12);
+            position: relative;
+            z-index: 1;
+        }
+        h1, h2 {
+            color: #7e3ff2;
+            text-shadow: 0 2px 12px #e3d0ff70;
+        }
+        nav { text-align: center; margin: 18px 0; }
+        nav a {
+            margin: 0 16px;
+            color: #7e3ff2;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #ff8c42; }
+        /* Portfolio grid */
+        .portfolio-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 24px;
+        }
+        .portfolio-photos img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 6px 35px rgba(126,63,242,0.21), 0 2px 8px rgba(0,0,0,0.07);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .portfolio-photos img:hover {
+            transform: scale(1.06) rotate(-2deg);
+            box-shadow: 0 12px 56px #7e3ff2cc, 0 4px 18px #ff8c4260;
+        }
+        .testimonials {
+            background: #f7f2ffcc;
+            padding: 16px;
+            border-radius: 10px;
+        }
+        .contact { font-size: 1.1em; }
+        @media (max-width:650px) {
+            header, section { padding: 12px 4vw; }
+            .portfolio-photos { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>🏠 Welcome to <strong>DANCUN EXCLUSIVE INTERIORS</strong></h1>
-    <blockquote>
-      “Designing spaces that speak elegance, style, and soul.”
-    </blockquote>
-    <p>
-      At Dancun Exclusive Interiors, I turn ordinary rooms into extraordinary experiences.<br>
-      With a sharp eye for detail and a passion for timeless design, I bring your vision to life—whether it's a cozy home, a modern apartment, or a creative office space.
-    </p>
-  </header>
+    <header>
+        <h1>Transforming Spaces into Stunning Works of Art</h1>
+        <p>Welcome to <strong>DANCUN EXCLUSIVE'S INTERIOR DESIGNING WEBSITE</strong>, where creativity meets comfort.<br>
+        We specialize in crafting beautiful, functional, and personalized interior spaces that reflect your unique style.<br>
+        Whether it’s your home, office, or commercial space — we bring your vision to life!</p>
+        <p><strong>Let’s create a space you’ll love coming back to!</strong></p>
+        <p>✅ <a href="#contact">Book your free consultation today!</a></p>
+    </header>
 
-  <main>
-    <section id="portfolio">
-      <h2>✨ My Portfolio</h2>
-      <ul>
-        <li><strong>Modern homes</strong>, elegant <strong>bedroom retreats</strong>, and <strong>custom kitchens</strong></li>
-        <li>Unique <strong>commercial and office makeovers</strong></li>
-        <li>Personalized design journeys from concept to final reveal</li>
-      </ul>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Modern Living Room">
-        <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=400&q=80" alt="Cozy Bedroom">
-        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80" alt="Stylish Kitchen">
-      </div>
-    </section>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
     <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hi, I’m Dancun! I believe every space should reflect the personality and aspirations of its owner. My approach to design combines functionality and beauty, ensuring every project feels unique, harmonious, and unforgettable.
-      </p>
+        <h2>Meet Your Designer – Passion, Purpose, and Precision</h2>
+        <p>At <strong>Dancun Exclusive</strong>, great design is more than just aesthetics — it’s about creating experiences. 
+        We work closely with clients to ensure every detail tells a story.</p>
+        <p>Our mission? To make your dream space a reality, one beautiful room at a time.</p>
     </section>
 
     <section id="services">
-      <h2>What I Offer</h2>
-      <ul>
-        <li>Interior design for homes, apartments, and offices</li>
-        <li>Space planning and color consultation</li>
-        <li>Furniture and decor sourcing</li>
-        <li>Project management from start to finish</li>
-      </ul>
+        <h2>Our Interior Design Services</h2>
+        <ul>
+            <li>🛋️ <strong>Residential Design</strong> – From cozy living rooms to luxury bedrooms</li>
+            <li>🏢 <strong>Commercial Spaces</strong> – Offices, restaurants, and retail interiors</li>
+            <li>🏗️ <strong>Renovation & Remodeling</strong> – Transform old spaces into modern gems</li>
+            <li>🎨 <strong>Color & Styling Consultation</strong> – Find your perfect palette</li>
+            <li>🖼️ <strong>Furniture & Decor Sourcing</strong> – Pick the perfect pieces</li>
+        </ul>
+        <p>✨ Each service comes with personalized design plans and mood boards.</p>
     </section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>📞 Book a free consultation today or browse through my latest work.</p>
-      <form class="contact-form" autocomplete="off">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-      </form>
+    <section id="portfolio">
+        <h2>Our Interior Design Portfolio</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Cozy Living Room" style="width:300px; border-radius:10px;">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Modern Kitchen" style="width:300px; border-radius:10px;">
+            <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=600&q=80" alt="Elegant Bedroom" style="width:300px; border-radius:10px;">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Office Space" style="width:300px; border-radius:10px;">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Dining Area" style="width:300px; border-radius:10px;">
+            <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=600&q=80" alt="Luxury Interior" style="width:300px; border-radius:10px;">
+        </div>
     </section>
-  </main>
 
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a href="https://www.facebook.com/YOUR_FACEBOOK" target="_blank">
-      <i class="fab fa-facebook"></i> Facebook
-    </a>
-  </div>
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <blockquote>
+            “They turned my empty apartment into a home I’m proud of!” – <strong>Sarah M.</strong>
+        </blockquote>
+        <blockquote>
+            “Professional, creative, and truly client-focused.” – <strong>Kevin N.</strong>
+        </blockquote>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Dancun Exclusive Interiors. Where design meets personality.</p>
-  </footer>
-
-  <script>
-    // Animate sections on scroll
-    const sections = document.querySelectorAll('section');
-    function revealSections() {
-      const trigger = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        if (top < trigger) {
-          section.classList.add('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealSections);
-    window.addEventListener('load', revealSections);
-
-    // Optional: Flashy contact form submit
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const btn = this.querySelector('button');
-      btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
-      btn.style.background = '#4caf50';
-      setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        btn.style.background = '';
-        this.reset();
-      }, 1800);
-    });
-  </script>
+    <section id="contact" class="contact">
+        <h2>Let’s Talk About Your Dream Space</h2>
+        <p>Have a project in mind? Questions? We’re here to help!</p>
+        <ul>
+            <li>📞 Phone: 0729089668</li>
+            <li>📧 Email: <a href="mailto:delahyy@gmail.com">delahyy@gmail.com</a></li>
+            <li>📍 Location: Nairobi, Kenya</li>
+        </ul>
+    </section>
 </body>
 </html>
