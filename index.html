@@ -1,147 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dancun Exclusive's Interior Design</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #222;
-            min-height: 100vh;
-            background: url('bg-person-computer.jpg') no-repeat center center fixed;
-            background-size: cover;
-            position: relative;
-        }
-        /* Overlay to dim background for readability */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255,255,255,0.83);
-            z-index: 0;
-        }
-        header, section {
-            max-width: 950px;
-            margin: 40px auto;
-            padding: 24px 28px;
-            background: rgba(255,255,255,0.97);
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(75,0,130,0.13), 0 1.5px 6px rgba(0,0,0,0.12);
-            position: relative;
-            z-index: 1;
-        }
-        h1, h2 {
-            color: #7e3ff2;
-            text-shadow: 0 2px 12px #e3d0ff70;
-        }
-        nav { text-align: center; margin: 18px 0; }
-        nav a {
-            margin: 0 16px;
-            color: #7e3ff2;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-        nav a:hover { color: #ff8c42; }
-        /* Portfolio grid */
-        .portfolio-photos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-            margin-top: 24px;
-        }
-        .portfolio-photos img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 6px 35px rgba(126,63,242,0.21), 0 2px 8px rgba(0,0,0,0.07);
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .portfolio-photos img:hover {
-            transform: scale(1.06) rotate(-2deg);
-            box-shadow: 0 12px 56px #7e3ff2cc, 0 4px 18px #ff8c4260;
-        }
-        .testimonials {
-            background: #f7f2ffcc;
-            padding: 16px;
-            border-radius: 10px;
-        }
-        .contact { font-size: 1.1em; }
-        @media (max-width:650px) {
-            header, section { padding: 12px 4vw; }
-            .portfolio-photos { grid-template-columns: 1fr; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>NEXTGEN by Dancun | Technology Solutions Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/295/295128.png">
 </head>
 <body>
-    <header>
-        <h1>Transforming Spaces into Stunning Works of Art</h1>
-        <p>Welcome to <strong>DANCUN EXCLUSIVE'S INTERIOR DESIGNING WEBSITE</strong>, where creativity meets comfort.<br>
-        We specialize in crafting beautiful, functional, and personalized interior spaces that reflect your unique style.<br>
-        Whether it’s your home, office, or commercial space — we bring your vision to life!</p>
-        <p><strong>Let’s create a space you’ll love coming back to!</strong></p>
-        <p>✅ <a href="#contact">Book your free consultation today!</a></p>
-    </header>
+  <!-- HERO SECTION -->
+  <header class="hero animated-bg">
+    <div class="container hero-content">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Tech Professional" class="hero-img">
+      <div>
+        <h1 class="main-title">NEXTGEN by Dancun</h1>
+        <h2 class="subtitle">Technology Solutions Engineer</h2>
+        <p class="tagline">AN EXCLUSIVE DIGITAL HUB</p>
+        <p class="global">Delivering Technology Solutions to the World</p>
+        <a href="#contact" class="cta-button">Let's Connect</a>
+      </div>
+    </div>
+  </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <section id="about">
-        <h2>Meet Your Designer – Passion, Purpose, and Precision</h2>
-        <p>At <strong>Dancun Exclusive</strong>, great design is more than just aesthetics — it’s about creating experiences. 
-        We work closely with clients to ensure every detail tells a story.</p>
-        <p>Our mission? To make your dream space a reality, one beautiful room at a time.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Interior Design Services</h2>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section section-framed">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&w=400" alt="Dancun Tech Guy" class="about-img">
+      <div>
+        <p>
+          I am an internationally-minded <b>Technology Solutions Engineer</b> and <b>Data Analyst</b> with a passion for empowering businesses and individuals through innovative tech. 
+          With years of hands-on experience in data analytics, cloud solutions, automation, and digital transformation, I deliver actionable insights and robust systems for clients worldwide.
+        </p>
         <ul>
-            <li>🛋️ <strong>Residential Design</strong> – From cozy living rooms to luxury bedrooms</li>
-            <li>🏢 <strong>Commercial Spaces</strong> – Offices, restaurants, and retail interiors</li>
-            <li>🏗️ <strong>Renovation & Remodeling</strong> – Transform old spaces into modern gems</li>
-            <li>🎨 <strong>Color & Styling Consultation</strong> – Find your perfect palette</li>
-            <li>🖼️ <strong>Furniture & Decor Sourcing</strong> – Pick the perfect pieces</li>
+          <li>Expert in <span class="highlight">Python, Power BI, SQL, Excel, Cloud Services</span></li>
+          <li>Strong background in <span class="highlight">machine learning, big data, data visualization</span></li>
+          <li>Worked with <span class="highlight">startups, enterprises, and NGOs</span> on mission-critical solutions</li>
+          <li>Committed to <span class="highlight">continuous learning</span> and <span class="highlight">innovation</span></li>
         </ul>
-        <p>✨ Each service comes with personalized design plans and mood boards.</p>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="portfolio">
-        <h2>Our Interior Design Portfolio</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Cozy Living Room" style="width:300px; border-radius:10px;">
-            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Modern Kitchen" style="width:300px; border-radius:10px;">
-            <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=600&q=80" alt="Elegant Bedroom" style="width:300px; border-radius:10px;">
-            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Office Space" style="width:300px; border-radius:10px;">
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Dining Area" style="width:300px; border-radius:10px;">
-            <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=600&q=80" alt="Luxury Interior" style="width:300px; border-radius:10px;">
-        </div>
-    </section>
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section section-framed">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-cards">
+      <div class="project-card animated-card">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Analytics Dashboard">
+        <h3>Global Analytics Dashboard</h3>
+        <p>Developed a real-time data visualization dashboard used by multinational teams for strategic decision-making.</p>
+      </div>
+      <div class="project-card animated-card">
+        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&w=400" alt="Cloud Automation">
+        <h3>Cloud Automation Suite</h3>
+        <p>Engineered automated cloud workflows that reduced manual processes by 60% for a fintech company.</p>
+      </div>
+      <div class="project-card animated-card">
+        <img src="https://images.pexels.com/photos/1181315/pexels-photo-1181315.jpeg?auto=compress&w=400" alt="AI Chatbot">
+        <h3>AI Support Chatbot</h3>
+        <p>Built an AI-powered chatbot that improved customer response times and satisfaction for a global brand.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="testimonials" class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <blockquote>
-            “They turned my empty apartment into a home I’m proud of!” – <strong>Sarah M.</strong>
-        </blockquote>
-        <blockquote>
-            “Professional, creative, and truly client-focused.” – <strong>Kevin N.</strong>
-        </blockquote>
-    </section>
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section section-framed">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><span>Python</span></div>
+      <div class="skill-card"><span>SQL &amp; Databases</span></div>
+      <div class="skill-card"><span>Power BI</span></div>
+      <div class="skill-card"><span>Excel</span></div>
+      <div class="skill-card"><span>JavaScript</span></div>
+      <div class="skill-card"><span>Cloud Platforms (AWS, Azure)</span></div>
+      <div class="skill-card"><span>Machine Learning</span></div>
+      <div class="skill-card"><span>Data Visualization</span></div>
+      <div class="skill-card"><span>Automation</span></div>
+      <div class="skill-card"><span>API Integration</span></div>
+    </div>
+  </section>
 
-    <section id="contact" class="contact">
-        <h2>Let’s Talk About Your Dream Space</h2>
-        <p>Have a project in mind? Questions? We’re here to help!</p>
-        <ul>
-            <li>📞 Phone: 0729089668</li>
-            <li>📧 Email: <a href="mailto:delahyy@gmail.com">delahyy@gmail.com</a></li>
-            <li>📍 Location: Nairobi, Kenya</li>
-        </ul>
-    </section>
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="section section-framed">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80" alt="Tech Team">
+      <img src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&w=400" alt="Coding Session">
+      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&w=400" alt="Cloud Technology">
+      <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&w=400" alt="World Map Tech">
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section section-framed">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-info">
+      <p><b>Phone/WhatsApp:</b> <a href="tel:+254729089668">+254 729 089 668</a></p>
+      <p><b>Email:</b> <a href="mailto:delahyy@gmail.com">delahyy@gmail.com</a></p>
+      <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank">Connect on LinkedIn</a></p>
+      <p><b>Location:</b> Available Worldwide</p>
+    </div>
+    <form class="contact-form" action="mailto:delahyy@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="How can I help you?" required></textarea>
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 NEXTGEN by Dancun | All rights reserved.</p>
+    <div class="social-icons">
+      <a href="mailto:delahyy@gmail.com" title="Email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+      <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+      <a href="https://wa.me/254729089668" target="_blank" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
